@@ -13,9 +13,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //initial binding
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        //set ui
         setContentView(binding.root)
 
+        //initial adapter
         val adapterDisaster = DisasterAdapter(generateDummy()) { disaster ->
             Toast.makeText(
                 this@MainActivity,
@@ -34,14 +39,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun generateDummy(): List<Disaster> {
         return listOf(
-            Disaster("Tsunami", "Natural", R.drawable.ic_natural),
-            Disaster("Volcanic Eruption", "Natural", R.drawable.ic_natural),
-            Disaster("Earthquake", "Natural", R.drawable.ic_natural),
-            Disaster("Flood", "Natural", R.drawable.ic_natural),
-            Disaster("Fire", "Natural", R.drawable.ic_natural),
-            Disaster("Nuclear Accident", "Man-made", R.drawable.ic_manmade),
-            Disaster("Terrorist Attack", "Man-made", R.drawable.ic_manmade),
-            Disaster("War", "Man-made", R.drawable.ic_manmade)
+            Disaster("Tsunami", "Natural", R.drawable.tsunami),
+            Disaster("Volcanic Eruption", "Natural", R.drawable.volcanic_eruption),
+            Disaster("Earthquake", "Natural", R.drawable.earthquake),
+            Disaster("Flood", "Natural", R.drawable.flood),
+            Disaster("Fire", "Natural", R.drawable.fire),
+            Disaster("Nuclear Accident", "Man-made", R.drawable.nuclear_accident),
+            Disaster("Terrorist Attack", "Man-made", R.drawable.terrorist_attack),
+            Disaster("War", "Man-made", R.drawable.war)
         )
     }
 }
